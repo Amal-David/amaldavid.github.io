@@ -28,7 +28,9 @@
             display: flex;
             justify-content: space-between;
             align-items: start;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 1.5rem;
         }
         .subtitle {
             color: #374151;
@@ -38,18 +40,19 @@
         }
         .section {
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #d1d5db;
             padding-bottom: 1.5rem;
         }
         .experience-grid {
             display: grid;
-            grid-template-columns: auto 7rem 1fr;
+            grid-template-columns: minmax(auto, 300px) 7rem 1fr;
             gap: 0.5rem 2rem;
             align-items: baseline;
         }
         .experience-title {
             font-weight: 600;
             color: #111827;
+            white-space: nowrap;
         }
         .experience-date {
             color: #666;
@@ -78,6 +81,54 @@
         }
         .skills-list li {
             margin-bottom: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .experience-desc {
+                white-space: normal;
+                margin-bottom: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .experience-date {
+                color: #666;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -164,7 +215,7 @@
             <div class="experience-date">2021</div>
             <div class="experience-desc">Built and Scaled the platform as product and engineering head and scaled to 500K+ users</div>
 
-            <div class="experience-title">RPGF (SwayamConnect)</div>
+            <div class="experience-title">RPGF - SwayamConnect</div>
             <div class="experience-date">2021-2022</div>
             <div class="experience-desc">Built mobile and web apps for frontline healthcare workers to access government benefits</div>
 
