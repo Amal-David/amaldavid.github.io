@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Amala David Arockiam's Professional Experiences - AI Engineer, Independent Researcher, and Engineering Leader with experience across various domains including LLMs, GenAI, and Enterprise Solutions.">
+    <meta name="keywords" content="Amala David Arockiam, AI Engineer, Professional Experience, Projects, LLM Expert, Product Leader, Engineering Leader, GenAI">
+    <meta name="author" content="Amala David Arockiam">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Amala David Arockiam - Professional Experiences">
+    <meta property="og:description" content="Explore Amala David Arockiam's professional experiences and projects in AI, LLMs, and enterprise solutions">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Amala David Arockiam - Professional Experiences">
+    <meta name="twitter:description" content="Explore Amala David Arockiam's professional experiences and projects in AI, LLMs, and enterprise solutions">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <title>Amala David Arockiam - Experiences</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 1.5rem auto;
+            padding: 1.5rem;
+            color: #374151;
+            background-color: #fff;
+        }
+        h1 {
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+            font-size: 2rem;
+        }
+        h2 {
+            font-weight: 500;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+        .header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 1.5rem;
+        }
+        .subtitle {
+            color: #4b5563;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .section {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 1.5rem;
+        }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: minmax(auto, 300px) 7rem 1fr;
+            gap: 0.5rem 2rem;
+            align-items: baseline;
+        }
+        .experience-title {
+            font-weight: 600;
+            color: #111827;
+            white-space: nowrap;
+        }
+        .experience-date {
+            color: #4b5563;
+            font-size: 0.85rem;
+        }
+        .experience-desc {
+            color: #4b5563;
+            font-style: italic;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: visible;
+        }
+
+        /* Navigation styles */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .site-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #111827;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #111827;
+        }
+        
+        .intro {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .tech-stack {
+            background-color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-stack h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background-color: #e5e7eb;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .skills-section h3 {
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skills-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-section {
+            padding: 1rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .contact-icons {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .contact-icons a {
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-icons a:hover {
+            color: #111827;
+        }
+
+        .contact-handle {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .experience-desc {
+                white-space: normal;
+                margin-bottom: 1rem;
+            }
+
+            .experience-date {
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-container">
+        <a href="index.html" class="site-title">Amala David</a>
+        <div class="nav-links">
+            <a href="experiences.html">Experiences</a>
+            <a href="http://amal.bearblog.dev/blog" target="_blank">Blog</a>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Professional Experiences</h1>
+        <div class="subtitle">A walk through of my professional journey and contributions</div>
+    </div>
+
+    <div class="section intro">
+        <p>
+            Throughout my career, I've had the opportunity to work on a diverse range of projects across different domains. 
+            Below is a comprehensive list of my most notable professional experiences.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Most Notable Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-title">DocIngest</div>
+            <div class="experience-date">2024-2025</div>
+            <div class="experience-desc">Platform for indexing technical documentation for LLMs</div>
+
+            <div class="experience-title">Ladle Cooking</div>
+            <div class="experience-date">2024-2025</div>
+            <div class="experience-desc">Built a recipe personalization engine using LLMs</div>
+
+            <div class="experience-title">Garnr</div>
+            <div class="experience-date">2024-2025</div>
+            <div class="experience-desc">Voice AI Agents for inbound and outbound lead management</div>
+
+            <div class="experience-title">GPU.net</div>
+            <div class="experience-date">2024</div>
+            <div class="experience-desc">Decentralized Compute Infrastructure for datacenters especially provisioning and monitoring GPUs at scale</div>
+
+            <div class="experience-title">GraphMaker</div>
+            <div class="experience-date">2024</div>
+            <div class="experience-desc">Built real-time internet charts based on search queries with LLMs and sandboxed execution</div>
+
+            <div class="experience-title">Featherlite</div>
+            <div class="experience-date">2023-2024</div>
+            <div class="experience-desc">Enterprise LLM deployment platform for cost optimized LLMs in your own infrastructure using multi-cloud spot orchestration</div>
+
+            <div class="experience-title">Folder chat</div>
+            <div class="experience-date">2023-2024</div>
+            <div class="experience-desc">Enterprise self-hostable RAG platform with custom fine-tuned LLMs</div>
+
+            <div class="experience-title">Cogknit Defense</div>
+            <div class="experience-date">2022-2024</div>
+            <div class="experience-desc">Situational awareness system for tanks (Army IDEX Project)</div>
+
+            <div class="experience-title">Hexon Global</div>
+            <div class="experience-date">2022-2024</div>
+            <div class="experience-desc">Managed AWS Advanced Consulting Partnership and led enterprise AWS migrations and deployments</div>
+
+            <div class="experience-title">Livesitter</div>
+            <div class="experience-date">2023-2024</div>
+            <div class="experience-desc">Real-time video monitoring system analyzing 300+ cameras for safety events in schools</div>
+
+            <div class="experience-title">GoGames</div>
+            <div class="experience-date">2020-2023</div>
+            <div class="experience-desc">Built their esports tournament platform</div>
+
+            <div class="experience-title">MastBazaar</div>
+            <div class="experience-date">2020-2023</div>
+            <div class="experience-desc">Led tech and product for grocery e-commerce in Chennai</div>
+
+            <div class="experience-title">iCog</div>
+            <div class="experience-date">2021-2023</div>
+            <div class="experience-desc">Architected platform migration to multi-tenant SaaS architecture</div>
+
+            <div class="experience-title">Chingari</div>
+            <div class="experience-date">2021-2022</div>
+            <div class="experience-desc">Transitioned Fireside team into Chingari Audio and scaled to 5M+ users</div>
+
+            <div class="experience-title">Fireside</div>
+            <div class="experience-date">2021</div>
+            <div class="experience-desc">Built and scaled the platform to 500K+ users as product and engineering head</div>
+
+            <div class="experience-title">RPGF - SwayamConnect</div>
+            <div class="experience-date">2021-2022</div>
+            <div class="experience-desc">Built mobile and web apps for frontline healthcare workers to access government benefits</div>
+
+            <div class="experience-title">Cogknit AI</div>
+            <div class="experience-date">2021-2022</div>
+            <div class="experience-desc">Productionized STT, TTS, and M2M models for Indic languages</div>
+
+            <div class="experience-title">UpraiseVC</div>
+            <div class="experience-date">2021</div>
+            <div class="experience-desc">Built a data-driven deal analysis platform for VCs and startups</div>
+
+            <div class="experience-title">Omnipolis</div>
+            <div class="experience-date">2019-2022</div>
+            <div class="experience-desc">Built emergency response platform (web & mobile apps)</div>
+
+            <div class="experience-title">Cultyvate</div>
+            <div class="experience-date">2020</div>
+            <div class="experience-desc">Built an IoT-enabled water purification & distribution system for industries & agriculture</div>
+
+            <div class="experience-title">SpendMD</div>
+            <div class="experience-date">2020</div>
+            <div class="experience-desc">Built a spend analysis platform for pharmaceutical procurement and analytics</div>
+
+            <div class="experience-title">TraderHouse</div>
+            <div class="experience-date">2019-2024</div>
+            <div class="experience-desc">Technical Advisor for Algorithmic Trading Strategies</div>
+
+            <div class="experience-title">TechVector</div>
+            <div class="experience-date">2019-2020</div>
+            <div class="experience-desc">Online Assessment Platform for Networking Labs (CCNA, CCNP)</div>
+
+            <div class="experience-title">Scikiq</div>
+            <div class="experience-date">2019</div>
+            <div class="experience-desc">Built a data discovery platform similar to Amundsen and Datahub</div>
+
+            <div class="experience-title">Futuryze</div>
+            <div class="experience-date">2019</div>
+            <div class="experience-desc">Built algo trading strategies and traded options in Indian markets</div>
+
+            <div class="experience-title">IoT For All</div>
+            <div class="experience-date">2018-2020</div>
+            <div class="experience-desc">Built a IoT community in Chennai along with friends</div>
+
+            <div class="experience-title">Kitetree</div>
+            <div class="experience-date">2018</div>
+            <div class="experience-desc">Built an intuitive and attention drawing presentation maker leveraging principles of behavioural psychology</div>
+
+            <div class="experience-title">Utopian Labs</div>
+            <div class="experience-date">2017-2018</div>
+            <div class="experience-desc">Founded and built interoperable smart home devices using dynamic multi protocol</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Chrome Extensions</h2>
+        <div class="experience-grid">
+            <div class="experience-title">Claude Speech to Text</div>
+            <div class="experience-date">2024</div>
+            <div class="experience-desc">Chrome Extension for voice input with Claude</div>
+
+            <div class="experience-title">ChatGPT Mini</div>
+            <div class="experience-date">2023</div>
+            <div class="experience-desc">Featured Chrome Extension for ChatGPT</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/amala-david/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/DavidAmal" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://github.com/Amal-David/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:amal@utopianlabs.co">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
