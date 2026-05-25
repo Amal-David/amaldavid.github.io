@@ -787,14 +787,27 @@ details > summary .hint {
     details > summary .hint { color: #888; }
 }
 </style></head><body>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #e5e7eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <a href="../../" style="font-weight:600;font-size:1.25rem;color:#111827;text-decoration:none;">Amala David</a>
-  <div style="display:flex;gap:1.5rem;">
-    <a href="../../experiences/" style="color:#4b5563;text-decoration:none;font-weight:500;font-size:0.95rem;">Experiences</a>
-    <a href="../" style="color:#111827;text-decoration:none;font-weight:500;font-size:0.95rem;border-bottom:2px solid #111827;padding-bottom:2px;">Writing</a>
-    <a href="http://amal.bearblog.dev/blog" target="_blank" style="color:#4b5563;text-decoration:none;font-weight:500;font-size:0.95rem;">Blog</a>
+<div class="site-nav">
+  <a href="../../" class="site-nav-title">Amala David</a>
+  <div class="site-nav-links">
+    <a href="../../experiences/">Experiences</a>
+    <a href="../" class="active">Writing</a>
+    <a href="http://amal.bearblog.dev/blog" target="_blank">Blog</a>
   </div>
 </div>
+<style>
+.site-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #e5e7eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+.site-nav-title{font-weight:600;font-size:1.25rem;color:#111827;text-decoration:none;}
+.site-nav-links{display:flex;gap:1.5rem;}
+.site-nav-links a{color:#4b5563;text-decoration:none;font-weight:500;font-size:0.95rem;}
+.site-nav-links a.active{color:#111827;border-bottom:2px solid #111827;padding-bottom:2px;}
+@media(prefers-color-scheme:dark){
+.site-nav{border-bottom-color:#333;}
+.site-nav-title{color:#e6e6e6;}
+.site-nav-links a{color:#aaa;}
+.site-nav-links a.active{color:#fff;border-bottom-color:#fff;}
+}
+</style>
 <h1>Picking an open-source audio annotator, by the book</h1>
 <div class="byline">A build log toward a TTS-aware script writer · May 2026 · ~6,500 words</div>
 

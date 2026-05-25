@@ -94,6 +94,16 @@
             overflow: visible;
         }
 
+        .repo-link {
+            color: #111827;
+            text-decoration: none;
+            border-bottom: 1px solid #d1d5db;
+        }
+        .repo-link:hover {
+            color: #4b5563;
+            border-bottom-color: #4b5563;
+        }
+
         /* Navigation styles */
         .nav-container {
             display: flex;
@@ -417,13 +427,56 @@
     </div>
 
     <div class="section">
+        <h2>GitHub</h2>
+        <div class="experience-grid" id="github-repos">
+            <div class="experience-title"><a href="https://github.com/Amal-David/keyleak-detector" target="_blank" rel="noopener noreferrer" class="repo-link">keyleak-detector</a></div>
+            <div class="experience-date" data-repo="keyleak-detector">&#9733; 262</div>
+            <div class="experience-desc">Scan websites for exposed API keys and secrets</div>
+
+            <div class="experience-title"><a href="https://github.com/Amal-David/gitbook-downloader" target="_blank" rel="noopener noreferrer" class="repo-link">gitbook-downloader</a></div>
+            <div class="experience-date" data-repo="gitbook-downloader">&#9733; 145</div>
+            <div class="experience-desc">Download Gitbook documentation of any site as MD files to use with LLMs</div>
+
+            <div class="experience-title"><a href="https://github.com/Amal-David/whatsapp-llm" target="_blank" rel="noopener noreferrer" class="repo-link">whatsapp-llm</a></div>
+            <div class="experience-date" data-repo="whatsapp-llm">&#9733; 10</div>
+            <div class="experience-desc">WhatsApp integration with LLMs</div>
+
+            <div class="experience-title"><a href="https://github.com/Amal-David/docingest" target="_blank" rel="noopener noreferrer" class="repo-link">docingest</a></div>
+            <div class="experience-date" data-repo="docingest">&#9733; 6</div>
+            <div class="experience-desc">Open-source engine for turning documentation sites into searchable, MCP-accessible context</div>
+
+            <div class="experience-title"><a href="https://github.com/Amal-David/terminal-arcade" target="_blank" rel="noopener noreferrer" class="repo-link">terminal-arcade</a></div>
+            <div class="experience-date" data-repo="terminal-arcade">&#9733; 5</div>
+            <div class="experience-desc">A retro arcade for your terminal — pure Python, zero deps, curses-based</div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var els = document.querySelectorAll('[data-repo]');
+            var repos = [];
+            els.forEach(function(el) { repos.push(el.dataset.repo); });
+            repos.forEach(function(repo) {
+                fetch('https://api.github.com/repos/Amal-David/' + repo)
+                    .then(function(r) { return r.json(); })
+                    .then(function(d) {
+                        if (d.stargazers_count !== undefined) {
+                            var el = document.querySelector('[data-repo="' + repo + '"]');
+                            if (el) el.textContent = '★ ' + d.stargazers_count;
+                        }
+                    })
+                    .catch(function() {});
+            });
+        });
+        </script>
+    </div>
+
+    <div class="section">
         <h2>Chrome Extensions</h2>
         <div class="experience-grid">
-            <div class="experience-title">Claude Speech to Text</div>
+            <div class="experience-title"><a href="https://github.com/Amal-David/claude-whisper" target="_blank" rel="noopener noreferrer" class="repo-link">Claude Speech to Text</a></div>
             <div class="experience-date">2024</div>
             <div class="experience-desc">Chrome Extension for voice input with Claude</div>
 
-            <div class="experience-title">ChatGPT Mini</div>
+            <div class="experience-title"><a href="https://github.com/Amal-David/chatgpt-sensitive-data-blocker" target="_blank" rel="noopener noreferrer" class="repo-link">ChatGPT Mini</a></div>
             <div class="experience-date">2023</div>
             <div class="experience-desc">Featured Chrome Extension for ChatGPT</div>
         </div>
