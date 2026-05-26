@@ -1,0 +1,995 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GLCMQ5FRK9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GLCMQ5FRK9');
+</script>
+<title>What TTS throws away</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+* { box-sizing: border-box; }
+body {
+    font-family: Charter, Georgia, 'Iowan Old Style', serif;
+    margin: 0 auto;
+    padding: 32px 24px;
+    background: #fafafa;
+    color: #1a1a1a;
+    max-width: 760px;
+    line-height: 1.65;
+    font-size: 18px;
+}
+h1 { font-size: 36px; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 24px; margin: 48px 0 12px;
+     border-bottom: 1px solid #e5e5e5; padding-bottom: 8px; }
+h3 { font-size: 19px; margin: 28px 0 8px; color: #444; }
+.byline { color: #888; font-size: 14px; margin-bottom: 32px; }
+p { margin: 0 0 16px; }
+ul, ol { margin: 0 0 20px; padding-left: 24px; }
+li { margin-bottom: 6px; }
+strong { font-weight: 700; }
+blockquote {
+    border-left: 3px solid #d0d0d0;
+    padding-left: 16px;
+    margin: 24px 0;
+    color: #555;
+    font-style: italic;
+}
+code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 14px;
+}
+pre {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    padding: 14px 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 16px 0 24px;
+}
+pre code { background: none; padding: 0; font-size: 13px; }
+table { border-collapse: collapse; margin: 16px 0 24px; width: 100%;
+        font-size: 14px; }
+th, td { border: 1px solid #d5d5d5; padding: 8px 12px; text-align: left; }
+th { background: #f0f0f0; font-weight: 600; }
+table.leader-v6 {
+    font-size: 13px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+table.leader-v6 th, table.leader-v6 td {
+    border: 0;
+    border-bottom: 1px solid #ececec;
+    padding: 10px 6px;
+    text-align: center;
+    vertical-align: middle;
+}
+table.leader-v6 thead th {
+    background: #f7f7f7;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+}
+table.leader-v6 tr.subhead th {
+    background: #fafafa;
+    text-transform: lowercase;
+    font-weight: 500;
+    color: #888;
+    padding: 4px 4px;
+    border-bottom: 1px solid #e5e5e5;
+}
+table.leader-v6 tbody tr:hover { background: #f0f4f8 !important; }
+.muted { color: #888; }
+a { color: #1f5fbf; text-decoration: none; border-bottom: 1px solid #b0c8e8; }
+a:hover { color: #0a3b80; border-bottom-color: #0a3b80; }
+.note {
+    background: #fff8e7;
+    border-left: 3px solid #d4a900;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 15px;
+    color: #5a4500;
+}
+.chart-box {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0 28px;
+}
+.chart-box svg { width: 100%; height: auto; display: block; }
+.chart-caption { font-size: 13px; color: #666;
+                  margin-top: 8px; font-style: italic; }
+.lesson {
+    background: #ecf3fb;
+    border-left: 3px solid #1f5fbf;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 16px;
+}
+.lesson strong { color: #0a3b80; }
+hr { border: 0; border-top: 1px solid #e5e5e5; margin: 40px 0; }
+.audio-block {
+    background: #f7f9fb;
+    border: 1px solid #d0dae3;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 18px 0 22px;
+}
+.audio-block audio { width: 100%; }
+.audio-meta {
+    font-size: 13px;
+    color: #555;
+    margin-top: 6px;
+    font-style: italic;
+}
+.audio-transcript {
+    margin-top: 10px;
+    background: transparent;
+    border: 0;
+    border-top: 1px dashed #c8d2dc;
+    border-radius: 0;
+    padding: 8px 0 0 0;
+}
+.audio-transcript > summary {
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+    padding: 4px 0;
+}
+.audio-transcript > summary .hint {
+    font-size: 11px;
+    margin-left: auto;
+}
+.transcript-text {
+    font-family: Charter, Georgia, serif;
+    font-size: 14px;
+    color: #2a2a2a;
+    padding: 6px 12px;
+    border-left: 2px solid #1c385f;
+    margin: 8px 0;
+    background: rgba(255,255,255,0.5);
+    font-style: italic;
+}
+.transcript-note, .transcript-highlight {
+    font-size: 13px;
+    color: #555;
+    margin: 6px 0 0;
+}
+.transcript-highlight strong { color: #1c385f; }
+.transcript-note strong { color: #a04848; }
+.stt-row {
+    margin: 10px 0 14px;
+    padding-left: 8px;
+    border-left: 1px solid #d0dae3;
+}
+.stt-name {
+    font-size: 12px;
+    color: #1c385f;
+    font-weight: 700;
+    font-family: ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+.stt-extras {
+    font-weight: 400;
+    color: #888;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 8px;
+    font-size: 11px;
+}
+.stt-row .transcript-text {
+    margin: 4px 0;
+    font-size: 13px;
+    border-left: 0;
+    padding: 4px 0;
+    background: transparent;
+}
+.stt-intel, .stt-events {
+    font-size: 12px;
+    color: #555;
+    margin: 4px 0 0;
+    font-family: ui-monospace, monospace;
+}
+.stt-intel strong, .stt-events strong { color: #1c385f; }
+.tts-comparison-wrap {
+    margin-top: 12px;
+    border-top: 1px dashed #c8d2dc;
+    padding: 8px 0 0;
+    background: transparent;
+    border-radius: 0;
+}
+.tts-comparison-wrap > summary {
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+    padding: 4px 0;
+}
+.tts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+.tts-framing {
+    background: #f7f3e8;
+    border-left: 3px solid #b8860b;
+    padding: 10px 14px;
+    margin: 8px 0 12px;
+    font-size: 13px;
+    color: #5a4a20;
+    line-height: 1.55;
+    border-radius: 0 4px 4px 0;
+}
+.tts-framing strong { color: #7a4a00; }
+.tts-framing em { color: #7a4a00; font-style: italic; font-weight: 600; }
+.tts-comparison-wrap-expanded {
+    margin-top: 16px;
+    padding: 16px 0 0;
+    border-top: 2px solid #d0dae3;
+}
+.tts-section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 24px 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #d0dae3;
+}
+.tts-section-header:first-child { margin-top: 0; }
+.tts-part-label {
+    display: inline-block;
+    background: #1c385f;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.tts-part-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+.audio-section {
+    margin: 28px 0;
+    padding: 0;
+}
+.audio-section-title {
+    font-size: 19px;
+    margin: 0 0 10px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #d0dae3;
+    padding-bottom: 8px;
+}
+.audio-section-eyebrow {
+    display: block;
+    font-size: 11px;
+    color: #a04848;
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.audio-section-body {
+    padding: 4px 0;
+}
+.audio-section-lede {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0 14px;
+    line-height: 1.55;
+}
+.audio-section-lede strong { color: #1c385f; }
+/* Timeline + STT sections break out of the 760px column */
+.audio-section-timeline,
+.audio-section-stt {
+    width: min(1400px, calc(100vw - 32px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+/* STT section: render the 3 transcripts side-by-side as a grid */
+.audio-section-stt .audio-section-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    align-items: stretch;
+}
+.audio-section-stt .stt-row {
+    margin: 0;
+    padding: 12px 14px;
+    border-left: 0;
+    border: 1px solid #d0dae3;
+    border-radius: 6px;
+    background: #fafbfc;
+    display: flex;
+    flex-direction: column;
+}
+.audio-section-stt .stt-row .stt-name {
+    border-bottom: 1px solid #d0dae3;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+.audio-section-stt .stt-row .transcript-text {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0 0 8px;
+}
+.audio-section-stt .stt-row .stt-intel,
+.audio-section-stt .stt-row .stt-events {
+    font-size: 11px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #ccd5dd;
+}
+/* Comparison notes + highlights span the full grid width below the 3 cells */
+.audio-section-stt .transcript-note,
+.audio-section-stt .transcript-highlight {
+    grid-column: 1 / -1;
+    background: #f7f3e8;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 0;
+}
+.timeline-grid {
+    width: 100%;
+    font-family: Charter, Georgia, serif;
+}
+.timeline-headrow {
+    display: grid;
+    grid-template-columns: 220px 110px 1fr 60px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #d5d5d5;
+    font-size: 11px;
+    color: #888;
+}
+.timeline-axis {
+    position: relative;
+    height: 16px;
+}
+.timeline-axis .tick {
+    position: absolute;
+    transform: translateX(-50%);
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+}
+.timeline-row {
+    display: grid;
+    grid-template-columns: 220px 110px 1fr 60px;
+    gap: 10px;
+    align-items: center;
+    padding: 4px 0;
+    min-height: 36px;
+}
+.timeline-row.row-original {
+    background: rgba(214,123,110,0.06);
+    border-radius: 4px;
+}
+.timeline-label {
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+    padding-right: 4px;
+}
+.row-original .timeline-label { font-weight: 700; color: #1a1a1a; }
+.timeline-audio {
+    width: 100%;
+    height: 28px;
+}
+.timeline-bars {
+    display: flex;
+    height: 28px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.timeline-bars .bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    color: #fff;
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: help;
+    transition: filter 0.1s;
+    border-right: 1px solid rgba(255,255,255,0.4);
+}
+.timeline-bars .bar:last-child { border-right: 0; }
+.timeline-bars .bar:hover { filter: brightness(1.15); }
+.timeline-bars .bar-f { background: #d67b6e; }
+.timeline-bars .bar-m { background: #5a7fb8; }
+.timeline-bars .bar-text { display: inline-block; overflow: hidden;
+    text-overflow: ellipsis; }
+.timeline-total {
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    color: #888;
+    text-align: left;
+}
+.timeline-legend {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+.bar-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    margin-right: 4px;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+.bar-swatch.bar-f { background: #d67b6e; }
+.bar-swatch.bar-m { background: #5a7fb8; }
+.timeline-legend-note {
+    color: #888;
+    font-style: italic;
+    margin-left: auto;
+}
+.audio-subhead {
+    font-size: 17px;
+    margin: 28px 0 6px;
+    color: #1a1a1a;
+}
+/* Tabbed visualization — pure CSS via radio + sibling selectors */
+.viz-tabs-container { margin-top: 8px; }
+.viz-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid #d0dae3;
+    margin-bottom: 0;
+}
+.viz-tab {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 18px;
+    cursor: pointer;
+    border: 1px solid #d0dae3;
+    border-bottom: 0;
+    background: #f0f4f8;
+    border-radius: 4px 4px 0 0;
+    color: #555;
+    font-family: Charter, Georgia, serif;
+    transition: background 0.15s;
+}
+.viz-tab:hover { background: #e6edf4; }
+.viz-tab strong {
+    font-size: 14px;
+    color: #1c385f;
+}
+.viz-tab-sub {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+    font-style: italic;
+}
+#theread-viz-timing:checked ~ .viz-tabs label[for="theread-viz-timing"],
+#theread-viz-amplitude:checked ~ .viz-tabs label[for="theread-viz-amplitude"] {
+    background: #fff;
+    border-bottom: 2px solid #fff;
+    margin-bottom: -2px;
+    color: #1a1a1a;
+}
+#theread-viz-timing:checked ~ .viz-tabs label[for="theread-viz-timing"] strong,
+#theread-viz-amplitude:checked ~ .viz-tabs label[for="theread-viz-amplitude"] strong {
+    color: #1c385f;
+}
+.viz-pane { display: none; padding: 12px 0; }
+#theread-viz-timing:checked ~ .viz-pane-timing,
+#theread-viz-amplitude:checked ~ .viz-pane-amplitude {
+    display: block;
+}
+.waveform-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: Charter, Georgia, serif;
+}
+.waveform-row {
+    display: grid;
+    grid-template-columns: 220px 110px 1fr 60px;
+    gap: 10px;
+    align-items: center;
+    padding: 2px 0;
+}
+.waveform-row.waveform-headrow { border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 4px; padding-bottom: 4px; }
+.waveform-row.wf-row-original {
+    background: rgba(214,123,110,0.06);
+    border-radius: 4px;
+    padding: 4px 0;
+}
+.wf-label {
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+    padding-right: 4px;
+}
+.wf-row-original .wf-label { font-weight: 700; color: #1a1a1a; }
+.wf-strip-container {
+    position: relative;
+    height: 60px;
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.wf-strip {
+    height: 100%;
+    display: block;
+    object-fit: fill;
+}
+.wf-tick {
+    position: absolute;
+    transform: translateX(-50%);
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    color: #888;
+    top: 0;
+}
+.wf-total {
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    color: #888;
+}
+.tts-grid-title {
+    font-size: 12px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.tts-grid-sub {
+    font-weight: 400;
+    color: #888;
+    font-size: 11px;
+}
+.tts-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 1fr 1fr 1fr;
+    gap: 6px;
+    align-items: stretch;
+}
+.tts-row-label {
+    background: #f0f4f8;
+    border: 1px solid #d0dae3;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tts-row-label strong { color: #1c385f; font-size: 13px; }
+.tts-row-note { color: #888; font-style: italic; margin-top: 4px; }
+.tts-row-enhanced .tts-row-label { background: #fff4e6; border-color: #ddc090; }
+.tts-row-enhanced .tts-row-label strong { color: #7a4a00; }
+.tts-cell {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.tts-cell-name {
+    font-size: 11px;
+    font-family: ui-monospace, monospace;
+    color: #1c385f;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.tts-cell-syntax {
+    font-size: 10px;
+    color: #888;
+    font-style: italic;
+    line-height: 1.3;
+}
+.tts-cell audio { width: 100%; height: 30px; }
+.tts-cell-blocked {
+    background: #fef2f2;
+    border-color: #fbd5d5;
+}
+.tts-cell-blocked-note {
+    font-size: 11px;
+    color: #a04848;
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+details {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 0 16px;
+    margin: 12px 0;
+    background: #fcfcfc;
+}
+details[open] { padding-bottom: 12px; }
+details > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 0;
+    font-weight: 600;
+    font-size: 17px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before {
+    content: "▸";
+    color: #888;
+    font-size: 13px;
+    transition: transform 0.15s;
+    display: inline-block;
+}
+details[open] > summary::before { transform: rotate(90deg); }
+details > summary:hover { color: #1f5fbf; }
+details > summary .hint {
+    color: #888;
+    font-weight: 400;
+    font-size: 13px;
+    font-style: italic;
+    margin-left: auto;
+}
+.tl-dr {
+    background: #f5f5f5;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0 32px;
+    font-size: 16px;
+}
+.tl-dr strong { display: block; margin-bottom: 8px;
+                font-variant: small-caps; letter-spacing: 0.5px;
+                color: #555; }
+.matrix { font-family: ui-monospace, monospace; font-size: 13px; }
+.matrix th { background: #f0f0f0; }
+.cell-good { color: #1f6f37; font-weight: 600; }
+.cell-bad { color: #6f1f1f; }
+@media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #e6e6e6; }
+    h1, h2, h3 { color: #f0f0f0; }
+    h2 { border-bottom-color: #333; }
+    h3 { color: #c0c0c0; }
+    code { background: #2a2a2a; color: #e6e6e6; }
+    pre { background: #161616; border-color: #333; }
+    th { background: #2a2a2a; }
+    th, td { border-color: #333; }
+    blockquote { color: #aaa; border-left-color: #444; }
+    .muted { color: #888; }
+    a { color: #8ab4f8; border-bottom-color: #4a78b8; }
+    a:hover { color: #c8d8f8; border-bottom-color: #c8d8f8; }
+    .note { background: #2a2412; color: #f0c878; border-left-color: #a87800; }
+    .lesson { background: #1a253a; border-left-color: #8ab4f8; color: #d8e6fa; }
+    .lesson strong { color: #c8d8f8; }
+    .chart-box { background: #161616; border-color: #333; }
+    .chart-caption { color: #888; }
+    .tl-dr { background: #1f1f1f; border-color: #333; }
+    .tl-dr strong { color: #888; }
+    table.leader-v6 thead th { background: #1f1f1f; color: #aaa; border-bottom-color: #333; }
+    table.leader-v6 tr.subhead th { background: #1a1a1a; color: #888; border-bottom-color: #333; }
+    table.leader-v6 td { border-bottom-color: #2a2a2a; }
+    table.leader-v6 tbody tr:hover { background: #1a253a !important; }
+    .audio-block { background: #1a2230; border-color: #2a3a4a; }
+    .audio-meta { color: #9fb0c0; }
+    .audio-transcript { border-top-color: #2a3a4a; }
+    .audio-transcript > summary { color: #c8d2dc; }
+    .transcript-text {
+        background: rgba(0,0,0,0.2);
+        color: #e0e0e0;
+        border-left-color: #8ab4f8;
+    }
+    .transcript-note, .transcript-highlight { color: #aab4be; }
+    .transcript-highlight strong { color: #8ab4f8; }
+    .transcript-note strong { color: #ff8080; }
+    .tts-comparison-wrap { border-top-color: #2a3a4a; }
+    .tts-comparison-wrap > summary { color: #c8d2dc; }
+    .tts-grid-title { color: #c0c8d0; }
+    .tts-grid-sub { color: #888; }
+    .tts-row-label { background: #1a253a; border-color: #2a3a4a; color: #b0b8c0; }
+    .tts-row-label strong { color: #8ab4f8; }
+    .tts-row-note { color: #888; }
+    .tts-row-enhanced .tts-row-label {
+        background: #2a2412; border-color: #5a4a20;
+    }
+    .tts-row-enhanced .tts-row-label strong { color: #f0c878; }
+    .tts-cell { background: #161616; border-color: #333; }
+    .tts-cell-name { color: #8ab4f8; }
+    .tts-cell-syntax { color: #888; }
+    .tts-cell-blocked { background: #2a1818; border-color: #5a2a2a; }
+    .tts-cell-blocked-note { color: #ff8080; }
+    .tts-framing { background: #2a2412; color: #d8c08a; border-left-color: #a87800; }
+    .tts-framing strong, .tts-framing em { color: #f0c878; }
+    .tts-comparison-wrap-expanded { border-top-color: #2a3a4a; }
+    .tts-section-header { border-bottom-color: #2a3a4a; }
+    .tts-part-title { color: #e6e6e6; }
+    .tts-part-label { background: #8ab4f8; color: #1a1a1a; }
+    .audio-section-title { color: #f0f0f0; border-bottom-color: #2a3a4a; }
+    .audio-section-eyebrow { color: #ff9090; }
+    .audio-section-lede { color: #aab4be; }
+    .audio-section-lede strong { color: #8ab4f8; }
+    .audio-section-stt .stt-row {
+        background: #161616;
+        border-color: #2a3a4a;
+    }
+    .audio-section-stt .stt-row .stt-name { border-bottom-color: #2a3a4a; }
+    .audio-section-stt .stt-row .stt-intel,
+    .audio-section-stt .stt-row .stt-events { border-top-color: #2a3a4a; }
+    .audio-section-stt .transcript-note,
+    .audio-section-stt .transcript-highlight {
+        background: #2a2412;
+        color: #d8c08a;
+    }
+    .timeline-headrow { color: #888; border-bottom-color: #333; }
+    .timeline-row.row-original { background: rgba(214,123,110,0.10); }
+    .timeline-label { color: #ccc; }
+    .row-original .timeline-label { color: #f0f0f0; }
+    .timeline-total { color: #888; }
+    .timeline-legend { color: #aaa; border-top-color: #333; }
+    .timeline-legend-note { color: #777; }
+    .audio-subhead { color: #f0f0f0; }
+    .waveform-row.waveform-headrow { border-bottom-color: #333; }
+    .waveform-row.wf-row-original { background: rgba(214,123,110,0.10); }
+    .wf-label { color: #ccc; }
+    .wf-row-original .wf-label { color: #f0f0f0; }
+    .wf-strip-container { background: #161616; border-color: #333; }
+    .wf-tick { color: #888; }
+    .wf-total { color: #888; }
+    .viz-tabs { border-bottom-color: #2a3a4a; }
+    .viz-tab { background: #1a253a; border-color: #2a3a4a; color: #aab4be; }
+    .viz-tab:hover { background: #233047; }
+    .viz-tab strong { color: #8ab4f8; }
+    .viz-tab-sub { color: #888; }
+    #theread-viz-timing:checked ~ .viz-tabs label[for="theread-viz-timing"],
+    #theread-viz-amplitude:checked ~ .viz-tabs label[for="theread-viz-amplitude"] {
+        background: #1a1a1a;
+        border-bottom-color: #1a1a1a;
+        color: #e6e6e6;
+    }
+    .cell-good { color: #6fdc8c; }
+    .cell-bad { color: #ff8080; }
+    hr { border-top-color: #333; }
+    details { background: #1f1f1f; border-color: #333; }
+    details > summary { color: #d0d0d0; }
+    details > summary:hover { color: #8ab4f8; }
+    details > summary::before { color: #888; }
+    details > summary .hint { color: #888; }
+    .chart-box svg text { fill: #ccc !important; }
+    .chart-box svg text[fill="#1a1a1a"] { fill: #e0e0e0 !important; }
+    .chart-box svg text[fill="#444"] { fill: #bbb !important; }
+    .chart-box svg text[fill="#555"] { fill: #aaa !important; }
+}
+</style></head><body>
+<div class="site-nav">
+  <a href="../../" class="site-nav-title">Amala David</a>
+  <div class="site-nav-links">
+    <a href="../../experiences/">Experiences</a>
+    <a href="../" class="active">Writing</a>
+    <a href="http://amal.bearblog.dev/blog" target="_blank">Blog</a>
+  </div>
+</div>
+<style>
+.site-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #e5e7eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+.site-nav-title{font-weight:600;font-size:1.25rem;color:#111827;text-decoration:none;}
+.site-nav-links{display:flex;gap:1.5rem;}
+.site-nav-links a{color:#4b5563;text-decoration:none;font-weight:500;font-size:0.95rem;}
+.site-nav-links a.active{color:#111827;border-bottom:2px solid #111827;padding-bottom:2px;}
+@media(prefers-color-scheme:dark){
+.site-nav{border-bottom-color:#333;}
+.site-nav-title{color:#e6e6e6;}
+.site-nav-links a{color:#aaa;}
+.site-nav-links a.active{color:#fff;border-bottom-color:#fff;}
+}
+</style>
+<h1>What TTS throws away</h1>
+<div class="byline">The paralinguistic gap between human speech and synthetic audio · May 2026</div>
+
+<!-- ============ HOOK ============ -->
+
+<p>When a podcast host says "spaaaace" and holds the vowel for 1.1 seconds, every ASR transcribes it as "space." When two friends banter and one reacts with "Oh. Ooh. Mm." for 2.4 seconds of pure non-verbal communication, the transcript shows three punctuated words. When a speaker abandons a clause mid-thought — <em>"I really have no — I never thought…"</em> — the transcript records an em-dash. The audio records an affect shift.</p>
+
+<p>That's the gap. The training data for every TTS system is built from transcripts that discard the expressive vocabulary humans actually use. Drawn-out vowels, reactive backchannels, mid-sentence register shifts, the timing of a laugh — all of it is flattened into clean text before a TTS model ever sees it. The model can't learn what it's never shown.</p>
+
+<p>This post is about what that gap sounds like, why it exists, and what it would take to close it. Press play below — then expand the comparisons to see what three STT systems and four TTS engines make of the same 25 seconds.</p>
+
+<div class="audio-block"><audio controls preload="metadata" src="../audio/the_read_25s.mp3"></audio><div class="audio-meta">The Read · 2-host pop-culture podcast · reminiscing about childhood movie restrictions</div><div class="note" style="margin:12px 0 0;font-size:12px"><strong>A note on the clip:</strong> This clip contains the N-word, used colloquially by the hosts. It was selected for its paralinguistic richness — drawn-out vowels, mid-sentence pivots, backchannels, laughter — not its lexical content. STT transcripts reproduce it verbatim because verbatim fidelity is the point of the comparison.</div></div><section class="audio-section audio-section-stt"><h3 class="audio-section-title"><span class="audio-section-eyebrow">step 1 · what STT heard</span>Three frontier ASRs, same 25 seconds, three different transcripts</h3><div class="audio-section-body"><div class="stt-row"><div class="stt-name">Deepgram Nova-3<span class="stt-extras"> · conf 0.999</span></div><p class="transcript-text">Oh. If you watch nigga movies, I feel like it&#x27;s one of those. But for a massive chunk of my life, I didn&#x27;t because my mama didn&#x27;t let me watch anything that was rated worse than PG 13. That&#x27;s true. And then when I went off college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces. And I mean, I really have no I&#x27;d I never thought that there was a chance that you have seen that. But the point is that many of you at</p><p class="stt-intel"><strong>sentiment:</strong> negative (-0.45) · <strong>intents:</strong> Express frustration about nigga movies · <strong>topics:</strong> Movie watching · <strong>summary:</strong> Speaker 0 discusses how he didn&#x27;t watch the Partners in the Middle, citing his lack of desire to return to watching movies that were rated PG 13.</p></div><div class="stt-row"><div class="stt-name">OpenAI gpt-4o-transcribe<span class="stt-extras"></span></div><p class="transcript-text">If you watch nigga movies, I feel like it&#x27;s one of those. But for a massive chunk of my life, I didn&#x27;t because my mom didn&#x27;t let me watch anything that was rated worse than PG-13. And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces. I mean, I really have no idea. I never thought that there was a chance that you have seen it. But the point is that many of you...</p></div><div class="stt-row"><div class="stt-name">ElevenLabs Scribe v2<span class="stt-extras"></span></div><p class="transcript-text">Oh. If you watch nigga movies, I feel like it&#x27;s one of those. Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13. That&#x27;s true. And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces. [laughs] And I mean, I really have no— I never thought that there was a chance that you have seen that.</p><p class="stt-events"><strong>audio events captured:</strong> [laughs]</p></div><p class="transcript-note"><strong>What this comparison shows:</strong> (1) OpenAI drops the leading &#x27;Oh&#x27;; Eleven keeps &#x27;Oh&#x27; AND the &#x27;Mm-hmm&#x27; backchannel that the other two missed. (2) Deepgram&#x27;s &#x27;Express frustration&#x27; / &#x27;negative&#x27; sentiment are wrong — the host is warm and reminiscent. (3) Only Eleven captures [laughs] mid-utterance. (4) Deepgram preserves the disfluency &#x27;I really have no I&#x27;d I never thought&#x27;; OpenAI invents &#x27;no idea&#x27; to clean it up.</p><p class="transcript-highlight"><strong>Listen for:</strong> The mid-sentence pivot at the em-dash and the [laughs] event Eleven caught. None of these STT outputs carry the affect of the clip — they capture words and (for one) events.</p></div></section><section class="audio-section audio-section-timeline"><h3 class="audio-section-title"><span class="audio-section-eyebrow">step 2 · what TTS does with that transcript</span>Same transcript fed to 4 frontier TTS labs — listen, then see where the time goes</h3><p class="audio-section-lede">The original is 25 seconds. The same 8-segment script rendered through each TTS lab takes 28.7s to 34.9s. The chart aligns all 9 versions on a shared time axis, colored by speaker. <strong>Clean</strong> = raw STT transcript; <strong>Enhanced</strong> = same transcript with lab-appropriate affective markup. Switch tabs to compare timing vs silence placement.</p><div class="viz-tabs-container"><input type="radio" name="theread-viz" id="theread-viz-timing" checked hidden><input type="radio" name="theread-viz" id="theread-viz-amplitude" hidden><div class="viz-tabs"><label for="theread-viz-timing" class="viz-tab"><strong>Timing</strong><span class="viz-tab-sub">how long each segment took</span></label><label for="theread-viz-amplitude" class="viz-tab"><strong>Amplitude envelope</strong><span class="viz-tab-sub">where silence vs speech lands</span></label></div><div class="viz-pane viz-pane-timing"><div class="chart-box"><div class="timeline-grid"><div class="timeline-headrow"><div class="timeline-headrow-spacer"></div><div class="timeline-axis"><div class="tick" style="left:0.00%">0s</div><div class="tick" style="left:14.33%">5s</div><div class="tick" style="left:28.65%">10s</div><div class="tick" style="left:42.98%">15s</div><div class="tick" style="left:57.31%">20s</div><div class="tick" style="left:71.63%">25s</div><div class="tick" style="left:85.96%">30s</div></div><div class="timeline-headrow-spacer-right"></div></div><div class="timeline-row row-original"><div class="timeline-label">Original audio (Scribe v2)</div><audio class="timeline-audio" controls preload="metadata" src="../audio/the_read_25s.mp3"></audio><div class="timeline-bars" style="width:70.72%"><div class="bar bar-f" style="width:2.836%" title="[F] Oh.  ·  0.70s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:10.292%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  2.54s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:28.930%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  7.14s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.998%" title="[M] That&#x27;s true.  ·  0.74s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:20.259%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  5.00s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:21.880%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  5.40s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:3.323%" title="[F] [laughs]  ·  0.82s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:9.481%" title="[M] But the point is that many of you at home  ·  2.34s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">24.68s</div></div><div class="timeline-row row-lab"><div class="timeline-label">ElevenLabs v3 — clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_eleven/the_read_25s_clean.mp3"></audio><div class="timeline-bars" style="width:82.35%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.19s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  3.54s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  8.50s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.74s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  6.83s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  5.90s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.50s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  2.55s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">28.74s</div></div><div class="timeline-row row-lab"><div class="timeline-label">ElevenLabs v3 — enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_eleven/the_read_25s_enhanced.mp3"></audio><div class="timeline-bars" style="width:84.47%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.19s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  3.63s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  8.72s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.76s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  7.00s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  6.05s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.51s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  2.61s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">29.48s</div></div><div class="timeline-row row-lab"><div class="timeline-label">Gemini 3.1 Flash — clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_flash31/the_read_25s_clean.wav"></audio><div class="timeline-bars" style="width:89.74%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.20s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  3.86s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  9.27s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.81s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  7.44s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  6.43s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.54s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  2.77s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">31.32s</div></div><div class="timeline-row row-lab"><div class="timeline-label">Gemini 3.1 Flash — enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_flash31/the_read_25s_enhanced.wav"></audio><div class="timeline-bars" style="width:89.28%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.20s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  3.84s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  9.22s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.81s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  7.40s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  6.39s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.54s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  2.76s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">31.16s</div></div><div class="timeline-row row-lab"><div class="timeline-label">Gemini 2.5 Pro — clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_pro25/the_read_25s_clean.wav"></audio><div class="timeline-bars" style="width:83.70%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.19s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  3.60s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  8.64s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.76s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  6.94s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  5.99s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.50s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  2.59s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">29.21s</div></div><div class="timeline-row row-lab"><div class="timeline-label">Gemini 2.5 Pro — enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_pro25/the_read_25s_enhanced.wav"></audio><div class="timeline-bars" style="width:84.27%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.19s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  3.62s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  8.70s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.76s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  6.99s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  6.03s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.51s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  2.60s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">29.41s</div></div><div class="timeline-row row-lab"><div class="timeline-label">OpenAI gpt-4o-mini-tts — clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_openai/the_read_25s_clean.mp3"></audio><div class="timeline-bars" style="width:100.00%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.23s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  4.30s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  10.33s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.90s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  8.29s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  7.16s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.60s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  3.09s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">34.90s</div></div><div class="timeline-row row-lab"><div class="timeline-label">OpenAI gpt-4o-mini-tts — enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_openai/the_read_25s_enhanced.mp3"></audio><div class="timeline-bars" style="width:97.31%"><div class="bar bar-f" style="width:0.648%" title="[F] Oh.  ·  0.22s"><span class="bar-text">Oh.</span></div><div class="bar bar-m" style="width:12.311%" title="[M] If you watch nigga movies, I feel like it&#x27;s one of those.  ·  4.18s"><span class="bar-text">If you watch…</span></div><div class="bar bar-f" style="width:29.590%" title="[F] Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13.  ·  10.05s"><span class="bar-text">Mm. But for a massive chunk…</span></div><div class="bar bar-m" style="width:2.592%" title="[M] That&#x27;s true.  ·  0.88s"><span class="bar-text">That&#x27;s true.</span></div><div class="bar bar-f" style="width:23.758%" title="[F] And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces and—  ·  8.07s"><span class="bar-text">And then when I went off…</span></div><div class="bar bar-m" style="width:20.518%" title="[M] I mean, I really have no i- I, I never thought that there was a chance that you had seen it.  ·  6.97s"><span class="bar-text">I mean, I really have no —…</span></div><div class="bar bar-f" style="width:1.728%" title="[F] [laughs]  ·  0.59s"><span class="bar-text">[laughs]</span></div><div class="bar bar-m" style="width:8.855%" title="[M] But the point is that many of you at home  ·  3.01s"><span class="bar-text">But the point…</span></div></div><div class="timeline-total">33.96s</div></div><div class="timeline-legend"><span class="bar-swatch bar-f"></span> speaker_0 (Crissle, F)<span class="bar-swatch bar-m"></span> speaker_1 (Kid Fury, M)<span class="timeline-legend-note">hover any bar to see the full segment text · TTS per-segment widths estimated by char-ratio × measured total duration; original uses Scribe v2 word timestamps</span></div></div><div class="chart-caption">Original (24.68s, bolded) is the reference. OpenAI expanded most (34.9s) — stitching seams between speakers. ElevenLabs and Gemini 2.5 Pro closest to the human (~29s). Hover any bar for segment text; press play on any row.</div></div></div><div class="viz-pane viz-pane-amplitude"><div class="chart-box"><div class="waveform-grid"><div class="waveform-row waveform-headrow"><div class="wf-label"></div><div class="wf-audio-slot"></div><div class="wf-strip-container"><div class="wf-tick" style="left:0.00%">0s</div><div class="wf-tick" style="left:14.33%">5s</div><div class="wf-tick" style="left:28.65%">10s</div><div class="wf-tick" style="left:42.98%">15s</div><div class="wf-tick" style="left:57.31%">20s</div><div class="wf-tick" style="left:71.63%">25s</div><div class="wf-tick" style="left:85.96%">30s</div></div><div class="wf-total"></div></div><div class="waveform-row wf-row-original"><div class="wf-label">Original audio</div><audio class="timeline-audio" controls preload="metadata" src="../audio/the_read_25s.mp3"></audio><div class="wf-strip-container"><img src="../audio/waveforms/original.png" class="wf-strip" style="width:70.72%" alt="amplitude envelope for Original audio"/></div><div class="wf-total">24.68s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">ElevenLabs v3, clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_eleven/the_read_25s_clean.mp3"></audio><div class="wf-strip-container"><img src="../audio/waveforms/eleven_clean.png" class="wf-strip" style="width:82.35%" alt="amplitude envelope for ElevenLabs v3, clean"/></div><div class="wf-total">28.74s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">ElevenLabs v3, enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_eleven/the_read_25s_enhanced.mp3"></audio><div class="wf-strip-container"><img src="../audio/waveforms/eleven_enhanced.png" class="wf-strip" style="width:84.47%" alt="amplitude envelope for ElevenLabs v3, enhanced"/></div><div class="wf-total">29.48s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">Gemini 3.1 Flash, clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_flash31/the_read_25s_clean.wav"></audio><div class="wf-strip-container"><img src="../audio/waveforms/gemini_flash31_clean.png" class="wf-strip" style="width:89.74%" alt="amplitude envelope for Gemini 3.1 Flash, clean"/></div><div class="wf-total">31.32s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">Gemini 3.1 Flash, enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_flash31/the_read_25s_enhanced.wav"></audio><div class="wf-strip-container"><img src="../audio/waveforms/gemini_flash31_enhanced.png" class="wf-strip" style="width:89.28%" alt="amplitude envelope for Gemini 3.1 Flash, enhanced"/></div><div class="wf-total">31.16s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">Gemini 2.5 Pro, clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_pro25/the_read_25s_clean.wav"></audio><div class="wf-strip-container"><img src="../audio/waveforms/gemini_pro25_clean.png" class="wf-strip" style="width:83.70%" alt="amplitude envelope for Gemini 2.5 Pro, clean"/></div><div class="wf-total">29.21s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">Gemini 2.5 Pro, enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_gemini_pro25/the_read_25s_enhanced.wav"></audio><div class="wf-strip-container"><img src="../audio/waveforms/gemini_pro25_enhanced.png" class="wf-strip" style="width:84.27%" alt="amplitude envelope for Gemini 2.5 Pro, enhanced"/></div><div class="wf-total">29.41s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">OpenAI gpt-4o-mini-tts, clean</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_openai/the_read_25s_clean.mp3"></audio><div class="wf-strip-container"><img src="../audio/waveforms/openai_clean.png" class="wf-strip" style="width:100.00%" alt="amplitude envelope for OpenAI gpt-4o-mini-tts, clean"/></div><div class="wf-total">34.90s</div></div><div class="waveform-row wf-row-lab"><div class="wf-label">OpenAI gpt-4o-mini-tts, enhanced</div><audio class="timeline-audio" controls preload="metadata" src="../audio/tts_openai/the_read_25s_enhanced.mp3"></audio><div class="wf-strip-container"><img src="../audio/waveforms/openai_enhanced.png" class="wf-strip" style="width:97.31%" alt="amplitude envelope for OpenAI gpt-4o-mini-tts, enhanced"/></div><div class="wf-total">33.96s</div></div></div><div class="chart-caption">Amplitude envelopes (ffmpeg showwavespic), same time scale as the Timing tab. The dramatic gaps in OpenAI's strips are stitching seams — silence between concatenated segments rather than natural breath spacing.</div></div></div></div></section>
+
+<p>That gap is what this project is trying to close. ElevenLabs v3 gives you <code>[cheerful]</code> or <code>[deadpan]</code>. It will not give you the mid-thought interruption above — one speaker abandoning a clause and restarting with softer affect. The transcript reads as a clean sentence with an em-dash. The audio is something no tag captures.</p>
+
+<!-- ============ THE GOAL ============ -->
+
+<h2>What I'm building</h2>
+
+<p>We're building a <strong>fine-tuned script writer</strong> — a model whose output has the affective contour, the cue tags, the drawn-out vowels, and the per-segment direction <em>baked in</em>, so when any TTS reads it, what comes out is something a human voice actor would recognise as expressive.</p>
+
+<p>The script writer needs to emit four layers of paralinguistic detail that conventional script generation throws away:</p>
+
+<ul>
+<li><strong>Drawn-out vowels</strong> as literal spellings — <em>heyyy</em>, <em>spaaaace</em>, <em>okaaaay</em>. Repeated vowels encode hold duration. Standard ASR normalizes these away; the training corpus has to preserve them.</li>
+<li><strong>Non-verbal vocal cues</strong> as inline tokens — <code>uh</code>, <code>mm-hm</code>, <code>hmm</code>, <code>oh</code>, and their held forms (<code>uhhhh</code>, <code>mmmmm</code>). Their placement is the difference between a flat read and a believable one.</li>
+<li><strong>Bracketed event tags</strong> — <code>[laughs]</code>, <code>[sighs]</code>, <code>[breath]</code>, <code>[whispers]</code>, <code>[shouts]</code> — placed at the exact word boundary where they occur, not as global sentence markers.</li>
+<li><strong>Director's-note metadata</strong> at the paragraph level — tone, register, pace, emotion, per-speaker affect — so the same model can produce comedy, meditation, dialogue, or banter with different scene direction.</li>
+</ul>
+
+<p>The writer has to cover the full emotional range — not just happy/sad/angry/neutral but blended states like amused-resigned, hopeful-skeptical, warm-sarcastic. Current TTS can't reach those from a flat transcript alone; a script writer that puts affect <em>where it goes</em> is the leverage point.</p>
+
+<p>"Expressive" is the load-bearing word. The goal isn't "monologue for one tired podcaster." It's the full surface area of human speech — comedy timing, meditation silences, conversational backchannels, scene dialogue, songlike delivery — and under all of those, the emotion spectrum a real voice carries: warmth, amusement, sarcasm, fatigue, grief, hopefulness, curiosity. And the blended states that are most of human affect (amused-resigned, hopeful-skeptical, excited-anxious). The script-writer is the layer that says <em>"here is exactly which emotion goes where in the script"</em>, and the downstream TTS gets to focus on rendering instead of guessing.</p>
+
+<p>The script writer starts as a LoRA fine-tune, scaling to a full 7-8B fine-tune if tag placement accuracy demands it. (<a href="https://arxiv.org/abs/2603.08823">Fish Audio S2</a> fine-tuned a full 30B model for their annotator; my task is narrower but LoRA may not have enough capacity for ~110 inline tags.) The downstream TTS can be any engine — the first validation gate is whether tagged scripts produce measurably better output than untagged ones. Portability across TTS engines is the only way to keep iterating without vendor lock-in.</p>
+
+<p>The immediate question: <strong>where do the training annotations come from?</strong> Hand-labeling 100 hours at this granularity would take months. Frontier audio LLMs (Vertex Gemini 2.5 Pro) do it well but cost money and lock you into a closed API. Self-hosting an audio LLM that gets close enough would let us scale without rate limits, without sending audio to a third party, and with a path to fine-tune the annotator later. That's the build documented here.</p>
+
+<!-- ============ WHERE WE ARE ============ -->
+
+<h2>TTS in May 2026: what moved, what didn't</h2>
+
+<p>As of May 2026, audio LLMs and TTS are in two different places. <strong>Audio understanding</strong> has moved fast. Frontier closed models — <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro">Vertex Gemini 2.5 Pro</a>, OpenAI gpt-realtime — can listen to a 5-minute podcast and produce structured descriptions: speakers, emotions, vocal events, drawn-out words. Open models are catching up at roughly one per quarter — <a href="https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct">Qwen3-Omni</a>, <a href="https://huggingface.co/moonshotai/Kimi-Audio-7B-Instruct">Kimi-Audio</a>, <a href="https://huggingface.co/mispeech/midashenglm-7b">MiDashengLM</a>. <strong>Audio synthesis</strong> has also moved. <a href="https://elevenlabs.io/blog/eleven-v3-audio-tags-expressing-emotional-context-in-speech">ElevenLabs v3</a> exposes ~70 inline tags; <a href="https://www.hume.ai/octave">Hume Octave 2</a> takes free-text prosodic direction; <a href="https://blog.google/products/gemini/gemini-audio-model-updates/">Google Gemini 3.1 Flash TTS</a> accepts scene-level direction inline. <strong>But the ceiling moved, it didn't disappear</strong>. Every closed system still applies one uniform style across each tagged region. Continuous within-span affect — sarcasm, the smirk-while-talking — remains unsolved.</p>
+
+<p>The corpus + script-writer project lives in that asymmetry: I can build the <em>training data</em> from today's audio understanding models, and bet that synthesis catches up (or that even current synthesis renders richly-tagged scripts better than flat ones).</p>
+
+<h2>The annotation bottleneck nobody talks about</h2>
+
+<p><strong>The biggest lever for expressive TTS quality isn't model architecture or training scale — it's annotation quality.</strong></p>
+
+<p>Fish Audio's S2 improved its Tag Activation Rate from 62.6% to 88.1% — a 41% relative improvement — by better-annotating its training data. Same architecture, same pipeline, just richer labels. (<a href="https://arxiv.org/abs/2603.08823">arXiv:2603.08823</a>) The <a href="https://arxiv.org/abs/2510.20513">DeEAR</a> framework showed a 3x improvement in emotion expressiveness from data curation alone. And <a href="https://arxiv.org/abs/2511.07931">SpeechJudge</a> found that a fine-tuned reward model (77.2% accuracy) outperforms every frontier AudioLLM at judging speech quality, while traditional metrics like UTMOS (53.7%) are barely better than coin flips. Annotation quality drives <em>everything</em> — training data and evaluation.</p>
+
+<p>The field is converging on a spectrum of annotation approaches:</p>
+
+<ul>
+<li><strong>Zero annotation</strong> — pure scale: <a href="https://arxiv.org/abs/2410.00037">Moshi</a> trained on 7M hours with no labels, relying on a neural codec to preserve signals implicitly. Scale, but no control.</li>
+<li><strong>Emergent features</strong>: <a href="https://github.com/suno-ai/bark">Bark</a>'s <code>[laughs]</code> emerged from co-occurring text + audio events. Works for some events, unreliable for others.</li>
+<li><strong>Automated supervision</strong>: <a href="https://arxiv.org/abs/2403.03100">NaturalSpeech 3</a> factorizes audio into content, prosody, timbre, and acoustic detail. Principled, but narrow per axis.</li>
+<li><strong>Rich transcription</strong> — inline tags at word positions: Fish S2, <a href="https://arxiv.org/abs/2508.04195">NVSpeech</a>, and <a href="https://arxiv.org/abs/2505.17589">CosyVoice 3</a> all converge here. Best control, moderate scale.</li>
+<li><strong>Annotation-as-reward</strong> — the annotator also serves as the RL reward signal: Fish S2 and CosyVoice 3 both do this.</li>
+</ul>
+
+<p>We're building in the "rich transcription" tier, aiming toward "annotation-as-reward."</p>
+
+<!-- ============ THE PLAN ============ -->
+
+<h2>The plan, in one picture</h2>
+
+<div class="chart-box"><svg viewBox="0 0 940 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#777"/></marker></defs><rect x="10" y="55" width="155" height="56" rx="6" fill="#fafafa" stroke="#888" stroke-width="1.5"/><text x="87" y="78" text-anchor="middle" font-size="13" fill="#222" font-weight="600">audio clip</text><text x="87" y="98" text-anchor="middle" font-size="11" fill="#222" font-family="monospace" opacity="0.85">5 min, 16 kHz</text><rect x="200" y="55" width="155" height="56" rx="6" fill="#1c385f" stroke="#1c385f" stroke-width="1.5"/><text x="277" y="78" text-anchor="middle" font-size="13" fill="#fff" font-weight="600">audio LLM annotator</text><text x="277" y="98" text-anchor="middle" font-size="10" fill="#fff" font-family="monospace" opacity="0.85">self-hosted, on Modal</text><rect x="390" y="55" width="155" height="56" rx="6" fill="#fafafa" stroke="#888" stroke-width="1.5"/><text x="467" y="78" text-anchor="middle" font-size="13" fill="#222" font-weight="600">JSON annotation</text><text x="467" y="98" text-anchor="middle" font-size="11" fill="#222" font-family="monospace" opacity="0.85">16-field schema</text><rect x="580" y="55" width="155" height="56" rx="6" fill="#fafafa" stroke="#888" stroke-width="1.5"/><text x="657" y="78" text-anchor="middle" font-size="13" fill="#222" font-weight="600">script-writer LLM</text><text x="657" y="98" text-anchor="middle" font-size="10" fill="#222" font-family="monospace" opacity="0.85">fine-tune (LoRA → full)</text><rect x="770" y="55" width="155" height="56" rx="6" fill="#fafafa" stroke="#888" stroke-width="1.5"/><text x="847" y="78" text-anchor="middle" font-size="13" fill="#222" font-weight="600">TTS-aware script</text><text x="847" y="98" text-anchor="middle" font-size="11" fill="#222" font-family="monospace" opacity="0.85">[laughs] heyyy …</text><line x1="168" y1="83" x2="195" y2="83" stroke="#777" stroke-width="1.5" marker-end="url(#ar)"/><line x1="358" y1="83" x2="385" y2="83" stroke="#777" stroke-width="1.5" marker-end="url(#ar)"/><line x1="548" y1="83" x2="575" y2="83" stroke="#777" stroke-width="1.5" marker-end="url(#ar)"/><line x1="738" y1="83" x2="765" y2="83" stroke="#777" stroke-width="1.5" marker-end="url(#ar)"/><text x="470" y="25" text-anchor="middle" fill="#444" font-size="12" font-weight="600">The corpus pipeline, end to end</text><text x="470" y="45" text-anchor="middle" fill="#666" font-size="11">this post is about the dark box — choosing the annotator that feeds everything downstream</text><text x="277" y="135" text-anchor="middle" fill="#1c385f" font-size="11" font-weight="600">▲ the subject of this post</text></svg><div class="chart-caption">The full corpus pipeline ends in a fine-tuned script-writer LLM. This post is about the dark middle box — picking the audio LLM that produces the labels everything downstream learns from.</div></div>
+
+<p>Take 5-minute audio clips, run each through an annotation pipeline that emits structured JSON, use those triples as supervised-learning data. In practice, the dark box is a multi-pass pipeline — VAD, diarization, ASR, emotion classifiers, pitch extractors — because no single audio LLM captures everything. The <a href="https://arxiv.org/abs/2510.10444">EACL 2026 finding</a> on "lexical dominance" (Gemini scores 96.6% on text-based audio tasks but 25-35% on audio-only paralinguistic tasks) is why. A noisy annotator means a script writer that puts <code>[laughs]</code> in the wrong places.</p>
+
+
+<!-- ============ THE OPENING ANECDOTE — NOW WITH CONTEXT ============ -->
+
+<h2>The moment that started this benchmark</h2>
+
+<p>The first model I reached for was <a href="https://huggingface.co/nvidia/audio-flamingo-next-hf">Audio Flamingo Next</a>, NVIDIA's 8B audio model. On the first run, it returned identical output for every clip — same speaker count, same tone, same four breath events at the same timestamps. NPR news, a Moth story, a meditation, a stand-up set, all the same JSON. It wasn't broken. It just wasn't listening; the audio kwarg was being silently dropped by the processor.</p>
+
+<p>Model leaderboards are not model deployments. The number on the <a href="https://huggingface.co/">HuggingFace</a> page is one promise; the number you get on your data, in your container, is a different one. This post documents the gap.</p>
+
+<p>Calibrating the annotation box is the single highest-leverage decision in the whole pipeline.</p>
+
+<h2>Three layers of the gap, with audio</h2>
+
+<p>Three clips, three failure modes.</p>
+
+<h3>Layer 1 — The "uniform style per region" problem</h3>
+
+<p>Same clip. Pay attention to the mid-thought abandon: <em>"And I mean, I really have no — I never thought that there was a chance that you have seen that."</em> That em-dash isn't punctuation — it's an affect shift. Confident anecdote to softer acknowledgment, inside a single breath.</p>
+
+<div class="audio-block"><audio controls preload="metadata" src="../audio/the_read_25s.mp3"></audio><div class="audio-meta">The Read · listen for the mid-sentence pivot (&quot;I really have no — I never thought…&quot;) and the co-host&#x27;s overlapping &quot;That&#x27;s true&quot;</div><details class="audio-transcript"><summary>What three STT systems heard <span class="hint">(verbatim · no edits · 3 systems)</span></summary><div class="stt-row"><div class="stt-name">Deepgram Nova-3<span class="stt-extras"> · conf 0.999</span></div><p class="transcript-text">Oh. If you watch nigga movies, I feel like it&#x27;s one of those. But for a massive chunk of my life, I didn&#x27;t because my mama didn&#x27;t let me watch anything that was rated worse than PG 13. That&#x27;s true. And then when I went off college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces. And I mean, I really have no I&#x27;d I never thought that there was a chance that you have seen that. But the point is that many of you at</p><p class="stt-intel"><strong>sentiment:</strong> negative (-0.45) · <strong>intents:</strong> Express frustration about nigga movies · <strong>topics:</strong> Movie watching · <strong>summary:</strong> Speaker 0 discusses how he didn&#x27;t watch the Partners in the Middle, citing his lack of desire to return to watching movies that were rated PG 13.</p></div><div class="stt-row"><div class="stt-name">OpenAI gpt-4o-transcribe<span class="stt-extras"></span></div><p class="transcript-text">If you watch nigga movies, I feel like it&#x27;s one of those. But for a massive chunk of my life, I didn&#x27;t because my mom didn&#x27;t let me watch anything that was rated worse than PG-13. And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces. I mean, I really have no idea. I never thought that there was a chance that you have seen it. But the point is that many of you...</p></div><div class="stt-row"><div class="stt-name">ElevenLabs Scribe v2<span class="stt-extras"></span></div><p class="transcript-text">Oh. If you watch nigga movies, I feel like it&#x27;s one of those. Mm. But for a, a massive chunk of my life I didn&#x27;t, &#x27;cause my mama didn&#x27;t let me watch anything that was rated worse than PG-13. That&#x27;s true. And then when I went off to college, I just had no desire to go back and watch all the Don&#x27;t Be a Menaces. [laughs] And I mean, I really have no— I never thought that there was a chance that you have seen that.</p><p class="stt-events"><strong>audio events captured:</strong> [laughs]</p></div><p class="transcript-note"><strong>What this comparison shows:</strong> (1) OpenAI drops the leading &#x27;Oh&#x27;; Eleven keeps &#x27;Oh&#x27; AND the &#x27;Mm-hmm&#x27; backchannel that the other two missed. (2) Deepgram&#x27;s &#x27;Express frustration&#x27; / &#x27;negative&#x27; sentiment are wrong — the host is warm and reminiscent. (3) Only Eleven captures [laughs] mid-utterance. (4) Deepgram preserves the disfluency &#x27;I really have no I&#x27;d I never thought&#x27;; OpenAI invents &#x27;no idea&#x27; to clean it up.</p><p class="transcript-highlight"><strong>Listen for:</strong> The mid-sentence pivot at the em-dash and the [laughs] event Eleven caught. None of these STT outputs carry the affect of the clip — they capture words and (for one) events.</p></details><details class="tts-comparison-wrap"><summary>Now hear what frontier TTS does with this same transcript <span class="hint">(4 labs × clean vs enhanced. The delta is the point)</span></summary><p class="tts-framing"><strong>The question:</strong> take that transcript, feed it to the best TTS engines with all available markup — <em>how close do they get to the original</em>? That gap is what the script-writer fine-tune is trying to close.</p><div class="tts-grid"><div class="tts-grid-title">Same transcript re-synthesized through 3 frontier TTS labs <span class="tts-grid-sub">(top row = raw STT transcript · bottom row = with lab-appropriate enhancement markup)</span></div><div class="tts-row tts-row-clean"><div class="tts-row-label"><strong>Clean</strong><br><span class="tts-row-note">raw STT transcript<br>no tags, no direction</span></div><div class="tts-cell"><div class="tts-cell-name">ElevenLabs v3</div><audio controls preload="metadata" src="../audio/tts_eleven/the_read_25s_clean.mp3"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 3.1 Flash TTS</div><audio controls preload="metadata" src="../audio/tts_gemini_flash31/the_read_25s_clean.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 2.5 Pro TTS</div><audio controls preload="metadata" src="../audio/tts_gemini_pro25/the_read_25s_clean.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">OpenAI gpt-4o-mini-tts-2025-12-15</div><audio controls preload="metadata" src="../audio/tts_openai/the_read_25s_clean.mp3"></audio></div></div><div class="tts-row tts-row-enhanced"><div class="tts-row-label"><strong>Enhanced</strong><br><span class="tts-row-note">our enhancement<br>tags + direction +<br>drawn-out vowels</span></div><div class="tts-cell"><div class="tts-cell-name">ElevenLabs v3</div><div class="tts-cell-syntax">bracketed tags: [laughs] [warmly] [whispers] + inline drawn-out vowels</div><audio controls preload="metadata" src="../audio/tts_eleven/the_read_25s_enhanced.mp3"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 3.1 Flash TTS</div><div class="tts-cell-syntax">preview model · 200+ inline audio tags · preamble-style direction</div><audio controls preload="metadata" src="../audio/tts_gemini_flash31/the_read_25s_enhanced.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 2.5 Pro TTS</div><div class="tts-cell-syntax">GA Pro model · higher fidelity · slower per-call</div><audio controls preload="metadata" src="../audio/tts_gemini_pro25/the_read_25s_enhanced.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">OpenAI gpt-4o-mini-tts-2025-12-15</div><div class="tts-cell-syntax">pinned snapshot (Dec 2025, 35% lower WER vs prior gen) · premium voices · instructions field for prosodic + accent direction</div><audio controls preload="metadata" src="../audio/tts_openai/the_read_25s_enhanced.mp3"></audio></div></div></div></details></div>
+
+<details>
+<summary>What you just heard, technically <span class="hint">(the chunk-by-chunk drift problem)</span></summary>
+<p>Try reproducing that em-dash pivot with <a href="https://elevenlabs.io/blog/eleven-v3-audio-tags-expressing-emotional-context-in-speech">ElevenLabs v3</a> by chunking — first half <code>[confident]</code>, second half <code>[warm, softer]</code>. Every tag boundary becomes an acoustic seam. WeSCon (<a href="https://arxiv.org/abs/2509.24629">arXiv:2509.24629</a>) calls these <strong>"unnatural acoustic discontinuities at segment boundaries"</strong>. Other work attacks the same problem: Microsoft's <a href="https://arxiv.org/abs/2407.12229">EmoCtrl-TTS</a> uses continuous valence/arousal trajectories instead of discrete labels, and <a href="https://arxiv.org/abs/2602.03420">CoCoEmo</a> names the deeper limitation: single-label utterance-level control <em>"collapses affective diversity"</em>.</p>
+
+<div class="chart-box"><svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg"><text x="40" y="30" font-size="14" fill="#333" font-style="italic">&quot;I had a great day at work, oh and then the boss called me into his office — wonderful.&quot;</text><text x="40" y="70" font-size="12" fill="#666" font-weight="600">current TTS — sentence-level styling</text><rect x="40" y="80" width="680" height="36" fill="#a3d4a3" stroke="#4f9b4f" rx="4"/><text x="380" y="103" text-anchor="middle" font-size="14" fill="#1a1a1a" font-weight="600">[cheerful] applied uniformly</text><text x="40" y="160" font-size="12" fill="#666" font-weight="600">what a human actually does — shifting affect</text><rect x="40" y="170" width="250" height="36" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="165.0" y="193" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="600" font-family="monospace">[cheerful]</text><rect x="250" y="170" width="200" height="36" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="350.0" y="193" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="600" font-family="monospace">[neutral]</text><rect x="450" y="170" width="150" height="36" fill="#f0c878" stroke="#666" stroke-width="0.5"/><text x="525.0" y="193" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="600" font-family="monospace">[wary]</text><rect x="600" y="170" width="120" height="36" fill="#d96060" stroke="#666" stroke-width="0.5"/><text x="660.0" y="193" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="600" font-family="monospace">[deadpan, sarcastic]</text><text x="40" y="240" font-size="12" fill="#666">Frontier closed TTS (Eleven v3, Hume Octave 2, Gemini 3.1) lets you mark these segments with</text><text x="40" y="256" font-size="12" fill="#666">inline tags, but the style still applies <tspan font-weight="600">uniformly within each tagged region</tspan>. The continuous gradient is unsolved.</text></svg><div class="chart-caption">The gap: even the best closed TTS lets you tag <em>regions</em>, but each region still applies one uniform style. Continuous within-span affect, what humans do constantly — is unsolved.</div></div>
+</details>
+
+<h3>Layer 2 — The "complex blended affect" problem</h3>
+
+<p>The opening of a Smartless live show. Three voices pile onto a single beat — <em>"One more crack at it"</em> — then hyped-up gratitude, then a self-deprecating setup about smacking Sean across the face. The same speaker simultaneously performs excitement and undercuts himself with dry self-deprecation. Two affects, same words.</p>
+
+<div class="audio-block"><audio controls preload="metadata" src="../audio/smartless_25s.mp3"></audio><div class="audio-meta">Smartless · live show opening · three voices overlapping on &quot;one more crack at it&quot;, then the smack-across-the-face setup</div><details class="audio-transcript"><summary>What three STT systems heard <span class="hint">(verbatim · no edits · 3 systems)</span></summary><div class="stt-row"><div class="stt-name">Deepgram Nova-3<span class="stt-extras"> · conf 0.996</span></div><p class="transcript-text">Less. One more crack at it. Get one more crack at it. Let him have one more crack. Guys, we&#x27;re so excited. We&#x27;re here, and thank you for coming out tonight. This is very exciting for us. Yeah. I gave Sean a big smack across the face right before we came out, and I&#x27;m just waiting for her to hit me back. So just pardon me if I&#x27;m over here. It was so loud. I can&#x27;t believe you heard it. A little bit red over here. I&#x27;m sure it</p><p class="stt-intel"><strong>sentiment:</strong> neutral (-0.03) · <strong>intents:</strong> Express excitement, Request assistance · <strong>topics:</strong> Excited and excited event, Speaker response · <strong>summary:</strong> Speaker 0 is excited to have one more crack and asks the others to help. They express excitement and mention that they gave Sean a big smile.</p></div><div class="stt-row"><div class="stt-name">OpenAI gpt-4o-transcribe<span class="stt-extras"></span></div><p class="transcript-text">Guys, we&#x27;re so excited we&#x27;re here and thank you for coming out tonight.</p></div><div class="stt-row"><div class="stt-name">ElevenLabs Scribe v2<span class="stt-extras"></span></div><p class="transcript-text">list. Woo! One more crack at it. One more, one more. One more crack at it. Oh, oh. Let him have one more crack. Um, guys, we&#x27;re so excited we&#x27;re here, and thank you for coming out tonight. This is very exciting for us. Yeah. I gave Sean a big smack across the face right before we came out- I am red over here.</p></div><p class="transcript-note"><strong>What this comparison shows:</strong> (1) OpenAI massively truncated — ONE sentence out of ~ten spoken; overlapping voices confused endpointing. (2) Deepgram caught everything but hallucinated &#x27;big smile&#x27; in its summary (actual: &#x27;big smack&#x27;). (3) ElevenLabs captured cheering, laughs, false starts, and filler — most paralinguistically rich output by far. (4) None captured all 3 speakers — Deepgram says 1, Eleven says 2, ground truth is 3.</p><p class="transcript-highlight"><strong>Listen for:</strong> What each STT shows vs misses. Eleven is closest to corpus-grade; OpenAI's massive truncation is a production-risk surprise.</p></details><details class="tts-comparison-wrap"><summary>Now hear what frontier TTS does with this same transcript <span class="hint">(4 labs × clean vs enhanced. The delta is the point)</span></summary><p class="tts-framing"><strong>The question:</strong> take that transcript, feed it to the best TTS engines with all available markup — <em>how close do they get to the original</em>? That gap is what the script-writer fine-tune is trying to close.</p><div class="tts-grid"><div class="tts-grid-title">Same transcript re-synthesized through 3 frontier TTS labs <span class="tts-grid-sub">(top row = raw STT transcript · bottom row = with lab-appropriate enhancement markup)</span></div><div class="tts-row tts-row-clean"><div class="tts-row-label"><strong>Clean</strong><br><span class="tts-row-note">raw STT transcript<br>no tags, no direction</span></div><div class="tts-cell"><div class="tts-cell-name">ElevenLabs v3</div><audio controls preload="metadata" src="../audio/tts_eleven/smartless_25s_clean.mp3"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 3.1 Flash TTS</div><audio controls preload="metadata" src="../audio/tts_gemini_flash31/smartless_25s_clean.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 2.5 Pro TTS</div><audio controls preload="metadata" src="../audio/tts_gemini_pro25/smartless_25s_clean.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">OpenAI gpt-4o-mini-tts-2025-12-15</div><audio controls preload="metadata" src="../audio/tts_openai/smartless_25s_clean.mp3"></audio></div></div><div class="tts-row tts-row-enhanced"><div class="tts-row-label"><strong>Enhanced</strong><br><span class="tts-row-note">our enhancement<br>tags + direction +<br>drawn-out vowels</span></div><div class="tts-cell"><div class="tts-cell-name">ElevenLabs v3</div><div class="tts-cell-syntax">bracketed tags: [laughs] [warmly] [whispers] + inline drawn-out vowels</div><audio controls preload="metadata" src="../audio/tts_eleven/smartless_25s_enhanced.mp3"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 3.1 Flash TTS</div><div class="tts-cell-syntax">preview model · 200+ inline audio tags · preamble-style direction</div><audio controls preload="metadata" src="../audio/tts_gemini_flash31/smartless_25s_enhanced.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 2.5 Pro TTS</div><div class="tts-cell-syntax">GA Pro model · higher fidelity · slower per-call</div><audio controls preload="metadata" src="../audio/tts_gemini_pro25/smartless_25s_enhanced.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">OpenAI gpt-4o-mini-tts-2025-12-15</div><div class="tts-cell-syntax">pinned snapshot (Dec 2025, 35% lower WER vs prior gen) · premium voices · instructions field for prosodic + accent direction</div><audio controls preload="metadata" src="../audio/tts_openai/smartless_25s_enhanced.mp3"></audio></div></div></div></details></div>
+
+<details>
+<summary>What you just heard, technically <span class="hint">(complex emotion as a blend, not a label)</span></summary>
+<p>Real human affect is rarely one label. "We're so excited" is performed for the audience while "I gave Sean a big smack" undercuts it — hype + dry self-mockery in one breath. Three voices echoing "one more crack at it" is an emotional unit no tag captures. Sentence patterns that exercise this problem:</p>
+<ol>
+<li><em>"I really appreciate you scheduling this meeting at 5:30 on a Friday — truly, what a thoughtful use of everyone's time."</em> The hinge is "truly". Tag the whole thing <code>[grateful]</code> and it's wrong; tag the second half <code>[sarcastic]</code> and the transition is a cliff.</li>
+<li><em>"So the migration is done, the rollback plan is tested, and we're ready to ship — I mean, I think we're ready, mostly, unless QA found something this morning."</em> Confidence drains across the sentence. No clean tag boundary.</li>
+<li><em>"Okay, okay, the offer letter is here, it's actually here, oh god, I have to decide by Monday."</em> Excitement and anxiety are co-present from word one.</li>
+</ol>
+
+<div class="chart-box"><svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg"><text x="30" y="30" font-size="13" fill="#666" font-weight="600">A) one global tag — "basic TTS"</text><rect x="30" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="47.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">I</text><rect x="66" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="83.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">had</text><rect x="102" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="119.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">a</text><rect x="138" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="155.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">great</text><rect x="174" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="191.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">day</text><rect x="210" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="227.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">at</text><rect x="246" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="263.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">work,</text><rect x="282" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="299.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">oh</text><rect x="318" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="335.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">and</text><rect x="354" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="371.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">then</text><rect x="390" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="407.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">the</text><rect x="426" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="443.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">boss</text><rect x="462" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="479.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">called</text><rect x="498" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="515.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">me</text><rect x="534" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="551.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">into</text><rect x="570" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="587.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">his</text><rect x="606" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="623.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">office</text><rect x="642" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="659.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">—</text><rect x="678" y="50" width="34" height="28" fill="#a3d4a3" stroke="#4f9b4f" stroke-width="0.5"/><text x="695.0" y="69" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">wonderful.</text><text x="30" y="96" font-size="11" fill="#888" font-style="italic">[cheerful]. And "wonderful" comes out sincere instead of sarcastic. The joke dies.</text><text x="30" y="130" font-size="13" fill="#666" font-weight="600">B) tags every few words — "Eleven v3 / Gemini 3.1 / Hume Octave 2"</text><rect x="30" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="47.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">I</text><rect x="66" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="83.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">had</text><rect x="102" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="119.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">a</text><rect x="138" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="155.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">great</text><rect x="174" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="191.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">day</text><rect x="210" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="227.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">at</text><rect x="246" y="150" width="34" height="28" fill="#a3d4a3" stroke="#666" stroke-width="0.5"/><text x="263.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">work,</text><rect x="282" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="299.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">oh</text><rect x="318" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="335.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">and</text><rect x="354" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="371.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">then</text><rect x="390" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="407.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">the</text><rect x="426" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="443.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">boss</text><rect x="462" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="479.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">called</text><rect x="498" y="150" width="34" height="28" fill="#cccccc" stroke="#666" stroke-width="0.5"/><text x="515.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">me</text><rect x="534" y="150" width="34" height="28" fill="#f0c878" stroke="#666" stroke-width="0.5"/><text x="551.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">into</text><rect x="570" y="150" width="34" height="28" fill="#f0c878" stroke="#666" stroke-width="0.5"/><text x="587.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">his</text><rect x="606" y="150" width="34" height="28" fill="#f0c878" stroke="#666" stroke-width="0.5"/><text x="623.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">office</text><rect x="642" y="150" width="34" height="28" fill="#f0c878" stroke="#666" stroke-width="0.5"/><text x="659.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">—</text><rect x="678" y="150" width="34" height="28" fill="#d96060" stroke="#666" stroke-width="0.5"/><text x="695.0" y="169" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">wonderful.</text><line x1="281" y1="146" x2="281" y2="182" stroke="#a83737" stroke-width="2" stroke-dasharray="3,2"/><line x1="533" y1="146" x2="533" y2="182" stroke="#a83737" stroke-width="2" stroke-dasharray="3,2"/><line x1="677" y1="146" x2="677" y2="182" stroke="#a83737" stroke-width="2" stroke-dasharray="3,2"/><text x="30" y="196" font-size="11" fill="#888" font-style="italic">Tag boundaries become acoustic seams. WeSCon (arXiv:2509.24629) calls these "unnatural acoustic discontinuities at segment</text><text x="30" y="212" font-size="11" fill="#888" font-style="italic">boundaries" — each chunk is internally uniform, concatenation is audible. Also: tag overhead bloats the script.</text><text x="30" y="270" font-size="13" fill="#666" font-weight="600">C) director's note — paragraph-level direction</text><rect x="30" y="290" width="700" height="60" fill="#ecf3fb" stroke="#1f5fbf" stroke-width="1" rx="6"/><text x="42" y="312" font-size="12" fill="#0a3b80" font-style="italic">scene: speaker is recounting a workday to a friend. Starts genuinely cheerful, deflates into</text><text x="42" y="328" font-size="12" fill="#0a3b80" font-style="italic">resignation, then lands the final word with dry sarcasm. No mid-sentence pauses.</text><text x="42" y="344" font-size="11" fill="#666" font-family="monospace">→ "I had a great day at work, oh and then the boss called me into his office — wonderful."</text><rect x="30" y="370" width="34" height="28" fill="#a3d4a3" stroke="#999" stroke-width="0.3"/><text x="47.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">I</text><rect x="66" y="370" width="34" height="28" fill="#a3d4a3" stroke="#999" stroke-width="0.3"/><text x="83.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">had</text><rect x="102" y="370" width="34" height="28" fill="#a8d2a0" stroke="#999" stroke-width="0.3"/><text x="119.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">a</text><rect x="138" y="370" width="34" height="28" fill="#aed09c" stroke="#999" stroke-width="0.3"/><text x="155.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">great</text><rect x="174" y="370" width="34" height="28" fill="#b3ce98" stroke="#999" stroke-width="0.3"/><text x="191.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">day</text><rect x="210" y="370" width="34" height="28" fill="#b8cc94" stroke="#999" stroke-width="0.3"/><text x="227.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">at</text><rect x="246" y="370" width="34" height="28" fill="#bdca8f" stroke="#999" stroke-width="0.3"/><text x="263.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">work,</text><rect x="282" y="370" width="34" height="28" fill="#c4c890" stroke="#999" stroke-width="0.3"/><text x="299.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">oh</text><rect x="318" y="370" width="34" height="28" fill="#c9c490" stroke="#999" stroke-width="0.3"/><text x="335.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">and</text><rect x="354" y="370" width="34" height="28" fill="#cec090" stroke="#999" stroke-width="0.3"/><text x="371.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">then</text><rect x="390" y="370" width="34" height="28" fill="#d3bc90" stroke="#999" stroke-width="0.3"/><text x="407.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">the</text><rect x="426" y="370" width="34" height="28" fill="#d8b890" stroke="#999" stroke-width="0.3"/><text x="443.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">boss</text><rect x="462" y="370" width="34" height="28" fill="#dcb48f" stroke="#999" stroke-width="0.3"/><text x="479.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">called</text><rect x="498" y="370" width="34" height="28" fill="#dfb18b" stroke="#999" stroke-width="0.3"/><text x="515.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">me</text><rect x="534" y="370" width="34" height="28" fill="#e2ae86" stroke="#999" stroke-width="0.3"/><text x="551.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">into</text><rect x="570" y="370" width="34" height="28" fill="#e5aa82" stroke="#999" stroke-width="0.3"/><text x="587.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">his</text><rect x="606" y="370" width="34" height="28" fill="#e8a67d" stroke="#999" stroke-width="0.3"/><text x="623.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">office</text><rect x="642" y="370" width="34" height="28" fill="#e7977a" stroke="#999" stroke-width="0.3"/><text x="659.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">—</text><rect x="678" y="370" width="34" height="28" fill="#d96060" stroke="#999" stroke-width="0.3"/><text x="695.0" y="389" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a1a1a">wonderful.</text><text x="30" y="416" font-size="11" fill="#888" font-style="italic">A continuous affect contour, what humans actually do. No hard boundaries, no token bloat.</text><text x="30" y="470" font-size="12" fill="#444" font-weight="600">legend:</text><rect x="100" y="458" width="16" height="14" fill="#a3d4a3" stroke="#666"/><text x="122" y="470" font-size="11" fill="#555">cheerful</text><rect x="240" y="458" width="16" height="14" fill="#cccccc" stroke="#666"/><text x="262" y="470" font-size="11" fill="#555">neutral</text><rect x="380" y="458" width="16" height="14" fill="#f0c878" stroke="#666"/><text x="402" y="470" font-size="11" fill="#555">wary</text><rect x="520" y="458" width="16" height="14" fill="#d96060" stroke="#666"/><text x="542" y="470" font-size="11" fill="#555">sarcastic</text></svg><div class="chart-caption">Three approaches to a complex line: (A) one global tag. The joke dies. (B) chunked tags — seams audible, tokens wasted. (C) a paragraph of scene direction at the top, then the sentence flows — affect as a continuous trajectory.</div></div>
+
+<p>I call this the <strong>"director's note"</strong> framing — direction at the scene level, like screenplay stage directions. Hume's Octave 2 calls their equivalent field <em>"Acting Instructions"</em>. Voice acting works this way: a director gives one paragraph of intent before a scene, not <code>[smiling]</code> over each word.</p>
+</details>
+
+<h3>Layer 3 — The "drawn-out vowel" problem</h3>
+
+<p>Tara Brach delivering a meditation. Listen to how she pronounces "space" — held for around a second, four times longer than dictionary expects. The silences between phrases run 2-3 seconds. None of this duration information appears in the transcript.</p>
+
+<div class="audio-block"><audio controls preload="metadata" src="../audio/tara_brach_25s.mp3"></audio><div class="audio-meta">Tara Brach meditation · slow pace, held vowels, intentional silences between phrases</div><details class="audio-transcript"><summary>What three STT systems heard <span class="hint">(verbatim · no edits · 3 systems)</span></summary><div class="stt-row"><div class="stt-name">Deepgram Nova-3<span class="stt-extras"> · conf 0.998</span></div><p class="transcript-text">Perhaps you can even sense the space between the sensations just like you can sense the space or visualize the space between the particles in an atom, the nucleus of an atom. Space and aliveness.</p><p class="stt-intel"><strong>sentiment:</strong> positive (+0.35) · <strong>intents:</strong> Improve spatiomotion · <strong>topics:</strong> Space perception · <strong>summary:</strong> Perhaps you can even sense the space between the sensations just like you can sense the space or visualize the space between the particles in an atom, the nucleus of an atom.</p></div><div class="stt-row"><div class="stt-name">OpenAI gpt-4o-transcribe<span class="stt-extras"></span></div><p class="transcript-text">Perhaps you can even sense the space between the sensations, just like you can sense the space or visualize the space between the particles in an atom, the nucleus of an atom. Space and aliveness.</p></div><div class="stt-row"><div class="stt-name">ElevenLabs Scribe v1<span class="stt-extras"> · lang_prob 0.95</span></div><p class="transcript-text">Perhaps you can even sense the space between the sensations, just like you can sense the space or visualize the space between the particles in an atom, in the nucleus of an atom. Space and aliveness.</p></div><p class="transcript-note"><strong>What this comparison shows:</strong> Three near-identical transcripts — the easy case (single speaker, no overlap). ASRs converge on words; they diverge on paralinguistic events. Deepgram&#x27;s intent &#x27;Improve spatiomotion&#x27; is a hallucinated word. None of the transcripts encode the held vowels on &#x27;space&#x27; or the 2.5s silences.</p><p class="transcript-highlight"><strong>Listen for:</strong> Even on the easy case, all three miss what the audio actually carries: prosody. &#x27;space&#x27; (~280ms expected) is held ~1.1s. Three transcripts, zero of them encode that.</p></details><details class="tts-comparison-wrap"><summary>Now hear what frontier TTS does with this same transcript <span class="hint">(4 labs × clean vs enhanced. The delta is the point)</span></summary><p class="tts-framing"><strong>The question:</strong> take that transcript, feed it to the best TTS engines with all available markup — <em>how close do they get to the original</em>? That gap is what the script-writer fine-tune is trying to close.</p><div class="tts-grid"><div class="tts-grid-title">Same transcript re-synthesized through 3 frontier TTS labs <span class="tts-grid-sub">(top row = raw STT transcript · bottom row = with lab-appropriate enhancement markup)</span></div><div class="tts-row tts-row-clean"><div class="tts-row-label"><strong>Clean</strong><br><span class="tts-row-note">raw STT transcript<br>no tags, no direction</span></div><div class="tts-cell"><div class="tts-cell-name">ElevenLabs v3</div><audio controls preload="metadata" src="../audio/tts_eleven/tara_brach_25s_clean.mp3"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 3.1 Flash TTS</div><audio controls preload="metadata" src="../audio/tts_gemini_flash31/tara_brach_25s_clean.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 2.5 Pro TTS</div><audio controls preload="metadata" src="../audio/tts_gemini_pro25/tara_brach_25s_clean.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">OpenAI gpt-4o-mini-tts-2025-12-15</div><audio controls preload="metadata" src="../audio/tts_openai/tara_brach_25s_clean.mp3"></audio></div></div><div class="tts-row tts-row-enhanced"><div class="tts-row-label"><strong>Enhanced</strong><br><span class="tts-row-note">our enhancement<br>tags + direction +<br>drawn-out vowels</span></div><div class="tts-cell"><div class="tts-cell-name">ElevenLabs v3</div><div class="tts-cell-syntax">bracketed tags: [laughs] [warmly] [whispers] + inline drawn-out vowels</div><audio controls preload="metadata" src="../audio/tts_eleven/tara_brach_25s_enhanced.mp3"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 3.1 Flash TTS</div><div class="tts-cell-syntax">preview model · 200+ inline audio tags · preamble-style direction</div><audio controls preload="metadata" src="../audio/tts_gemini_flash31/tara_brach_25s_enhanced.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">Gemini 2.5 Pro TTS</div><div class="tts-cell-syntax">GA Pro model · higher fidelity · slower per-call</div><audio controls preload="metadata" src="../audio/tts_gemini_pro25/tara_brach_25s_enhanced.wav"></audio></div><div class="tts-cell"><div class="tts-cell-name">OpenAI gpt-4o-mini-tts-2025-12-15</div><div class="tts-cell-syntax">pinned snapshot (Dec 2025, 35% lower WER vs prior gen) · premium voices · instructions field for prosodic + accent direction</div><audio controls preload="metadata" src="../audio/tts_openai/tara_brach_25s_enhanced.mp3"></audio></div></div></div></details></div>
+
+<details>
+<summary>What you just heard, technically <span class="hint">(orthographic surface vs acoustic duration)</span></summary>
+<p>The Deepgram transcript is technically correct — every word is right. What's missing: "space" is held ~1.1s (vs ~280ms expected), there's a 2.5s silence between "sensations" and "just like". The text says "space"; the audio says <em>"spaaaaace"</em>. Most transcription pipelines, including <a href="https://github.com/nyrahealth/CrisperWhisper">CrisperWhisper</a>, normalize elongated spellings because the dictionary doesn't have entries for them.</p>
+<div class="chart-box"><svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg"><text x="40" y="40" font-size="13" fill="#666" font-weight="600">"hey" (expected duration)</text><rect x="40" y="55" width="80" height="40" fill="#7faed8" stroke="#3e7fc0" rx="2"/><text x="80" y="80" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">hey</text><text x="130" y="80" font-size="12" fill="#666" font-family="monospace">~280 ms</text><text x="40" y="125" font-size="13" fill="#666" font-weight="600">"heyyy" (drawn-out — duration_ratio: 3.2x)</text><rect x="40" y="140" width="256" height="40" fill="#d96060" stroke="#a83737" rx="2"/><text x="168" y="165" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">heyyy</text><text x="306" y="165" font-size="12" fill="#666" font-family="monospace">~890 ms</text><text x="40" y="195" font-size="11" fill="#888" font-style="italic">A standard ASR pass (CrisperWhisper, Whisper-large-v3) will transcribe both as "hey". The signal we want lives in the duration, not the tokens.</text></svg><div class="chart-caption">A drawn-out vowel as duration vs spelling. The audio carries the signal; the standard transcript erases it. The corpus has to recover it from the audio directly.</div></div>
+<p>If we want the script writer to emit "spaaaace" or "heyyy" in the right places, the training data has to contain those spellings. Standard ASR throws them away, so the audio-LLM annotator has to re-inject them by listening for duration ratios over a threshold.</p>
+</details>
+
+<h3>What happens when you feed it back to TTS</h3>
+
+<p>Each audio block above has a collapsible TTS comparison: four labs (<a href="https://blog.google/products/gemini/gemini-audio-model-updates/">Gemini 3.1 Flash</a>, Gemini 2.5 Pro, ElevenLabs v3, <a href="https://platform.openai.com/docs/api-reference/audio/createSpeech">OpenAI gpt-4o-mini-tts</a>), each in two modes — <strong>Clean</strong> (raw STT, no tags) and <strong>Enhanced</strong> (lab-appropriate markup).</p>
+
+<p>Key findings across all four labs:</p>
+
+<ol>
+<li><strong>Gemini 2.5 Pro absorbs slow-pace direction most aggressively</strong> — Tara Brach expanded from ~16.5s to ~31.7s (nearly 2x) but with 13-24s latency per call vs Flash's ~3-5s.</li>
+<li><strong>ElevenLabs v3 is second-most-responsive</strong> — Tara Brach 14.3s → 25.0s (1.75x expansion); its [laughs] tag landed mid-utterance exactly right on The Read.</li>
+<li><strong>Gemini 3.1 Flash takes direction less dramatically</strong> — Tara Brach 14.2s → 19.6s. Some tags (<code>[softly]</code>, <code>[whisper]</code>) tripped the safety filter on the meditation script.</li>
+<li><strong>Gemini's multi-speaker is hard-capped at 2 speakers</strong> via the public API (docs claim more; the API rejects 3+). OpenAI has no native multi-speaker at all.</li>
+</ol>
+
+<p>The delta between clean and enhanced rows is the whole point. Listen to Tara Brach across the four labs — that's where the gap is loudest.</p>
+
+<h3>The two-speaker correction. And how the pipeline derived it</h3>
+
+<p>On first pass we treated The Read as single-speaker. It's a back-and-forth between Crissle West (F) and Kid Fury (M). The correction shows <strong>what the corpus pipeline does at scale</strong>: Scribe v2's <code>speaker_id</code> tags break the clip into 8 turns; gender labels are cross-checked (no STT returns gender natively); each turn routes to the appropriate voice per lab. Speaker IDs from one model, gender from another, voice routing from a manual mapping — "STT → faithful TTS" is not closed by any single product.</p>
+
+<h3>The accent problem</h3>
+
+<p><strong>No production ASR returns accent or dialect information.</strong> Deepgram, ElevenLabs, OpenAI, CrisperWhisper — all return a BCP-47 language tag or just text. None returns "Black American", "Southern AAVE", or "British RP". Open-source classifiers exist (<a href="https://huggingface.co/Jzuluaga/accent-id-commonaccent_xlsr-en-english">CommonAccent</a> covers 16 English accents) but AAVE isn't a class in any of them.</p>
+
+<p>The consequence: The Read's hosts code-switch into AAVE constantly. Feed a clean transcript to a default TTS voice and you get a generic white-American reading. We had to route accent manually — ElevenLabs via voice library, Gemini and OpenAI via preamble direction. Adherence is hit-or-miss. <strong>Accent-aware TTS isn't a production capability in May 2026.</strong> The end-to-end pipeline "audio → derived accent → matched TTS voice" doesn't exist as a shipped product.</p>
+
+<h3>Why no production TTS handles these well</h3>
+
+<p>Subtler affects are even further behind. Sarcasm requires modeling the <em>divergence</em> between semantic content and prosodic delivery — no production TTS exposes a controllable knob for it, for irony, or for the polite-chuckle-versus-genuine-laugh distinction. Non-frontier TTS (Bark, <a href="https://github.com/SesameAILabs/csm">Sesame CSM</a>, <a href="https://github.com/kyutai-labs/moshi">Kyutai Moshi</a>) sits well behind on emotion expressiveness.</p>
+
+<p>The thread through all three layers: at every current TTS tier, continuous human affect is approximated by discrete styling. Our bet: build a corpus whose training data carries the affective contour finer than the global tag, pairing paragraph-level scene metadata with per-speaker inline markup, so the writer learns when to <em>describe</em> affect versus when to <em>mark</em> it.</p>
+
+<p>The same annotation pipeline that creates the training data can also <em>validate</em> TTS output. <a href="https://arxiv.org/abs/2603.08823">Fish Audio S2</a> and CosyVoice 3 both reuse their annotation models as RL reward signals. Building the annotator isn't just about creating training data — it's about creating the evaluation engine for everything downstream.</p>
+
+<hr>
+
+<p>The open question: does a script writer trained on richly annotated data produce scripts that downstream TTS renders more expressively than an untagged baseline? That validation is in progress; we'll share tag activation rates and listener preference numbers when they're ready.</p>
+
+<p>Three takeaways:</p>
+
+<ol>
+<li><strong>Script quality matters more than model choice.</strong> The delta between clean and enhanced TTS output comes from what's in the script, not from switching engines.</li>
+<li><strong>No single audio LLM captures everything.</strong> Drawn-out vowels, mid-sentence affect shifts, and backchannels require specialist acoustic models, not just bigger language models.</li>
+<li><strong>The annotation pipeline is the product.</strong> <a href="https://arxiv.org/abs/2603.08823">Fish S2</a>'s 41% TAR improvement came from annotation alone. The data is the moat.</li>
+</ol>
+
+<p>If you work in speech and see something I've gotten wrong — a methodology gap, a better tool, a paper I should have cited — I'd genuinely like to know. Reach me at <a href="https://amal.bearblog.dev/">amal.bearblog.dev</a> or wherever you saw this posted.</p>
+
+</body></html>
